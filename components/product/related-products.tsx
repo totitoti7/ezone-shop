@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { useState } from 'react';
 
 export default function RelatedProducts({ products }) {
   return (
@@ -25,12 +26,9 @@ export default function RelatedProducts({ products }) {
               )}
 
               <div className="w-full h-48 flex items-center justify-center bg-white">
-                <Image
+                <FallbackImage
                   src={`${process.env.NEXT_PUBLIC_IMAGEKIT_URL || ''}${product.CoverImg}`}
                   alt={product.Name}
-                  width={180}
-                  height={180}
-                  className="object-contain"
                 />
               </div>
 
@@ -66,5 +64,21 @@ export default function RelatedProducts({ products }) {
         })}
       </div>
     </div>
+  );
+}
+
+// Subcomponent to handle fallback image logic
+function FallbackImage({ src, alt }: { src: string; alt: string }) {
+  const [imgError, setImgError] = useState(false);
+
+  return (
+    <Image
+      src={imgError ? '/placeholder.svg' : src}
+      alt={imgError ? 'الصورة غير متوفرة' : alt}
+      width={160}
+      height={160}
+      className="object-contain"
+      onError={() => setImgError(true)}
+    />
   );
 }
