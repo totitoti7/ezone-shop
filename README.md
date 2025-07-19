@@ -4,8 +4,6 @@
 
 Ezone Shop is a modern, production-ready e-commerce demo built with **Next.js 15 (App Router)** and **React 19**. This project demonstrates best practices in server-side rendering, SEO, code quality, and maintainability. It was developed as a technical task for an interview and is designed to be easy to set up, run, and review.
 
----
-
 ## 📂 Demo Video
 
 A demo video is available in the `docs` folder. Please navigate there to view the project demonstration.
@@ -77,6 +75,20 @@ npm run format
 ```bash
 npm run build
 ```
+
+### 8. Running Lighthouse Audits
+
+To analyze your app's performance, accessibility, SEO, and best practices, you can use [Lighthouse](https://developers.google.com/web/tools/lighthouse):
+
+```sh
+npx lighthouse http://localhost:58961 --view
+```
+
+This command will run a Lighthouse audit on your local development server and open a detailed report in your browser.
+
+**Why is this useful for e-commerce?**
+- Lighthouse helps you identify and fix issues that impact site speed, accessibility, and SEO—all of which are critical for e-commerce success.
+- Fast, accessible, and well-optimized stores lead to higher conversion rates, better user experience, and improved search engine rankings.
 
 ---
 

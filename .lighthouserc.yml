@@ -6,5 +6,6 @@ ci:
     numberOfRuns: 3
   assert:
     preset: lighthouserc
+    reccommended: true
   upload:
     target: 'temporary-public-storage'
